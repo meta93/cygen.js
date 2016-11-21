@@ -1,4 +1,4 @@
-/*! Cygen.js - v0.1 - 2016-04-18
+/*! Cygen.js - v0.1 - 2016-04-21
 * https://github.com/Dominic-Damoah/Cygen.js
 * Copyright (c) 2016 Damoah Dominic; Licensed  */
 (function (root, factory) {
@@ -16,6 +16,7 @@
         this.say_hello  = function(){
             return "Hello";
         };
+        
     }
     
     return Cygen;
