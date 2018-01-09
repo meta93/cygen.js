@@ -1,6 +1,6 @@
-/* 
+/*
 Cygen.js Proof of concept
-Author: Damoah Dominic Asare-Otieku, Damoah Dominic Dalyngton 
+Author: Damoah Dominic Asare-Otieku, Damoah Dominic Dalyngton
 Description: Proof of concept for the Cygen.js library.
 License: GPLv3
 */
@@ -12,8 +12,8 @@ const NORMAL = "normal";
 const SINGLE = "single";
 const DEV_COLOR = "#000000";
 const PROD_COLOR = "#68BDF6";
-const EASTER_COLOR = "#FF756E"; 
-const NODE_FILL = DEV_COLOR; 
+const EASTER_COLOR = "#FF756E";
+const NODE_FILL = DEV_COLOR;
 
 var instance = null;
 var GRAPH = null;
@@ -105,7 +105,7 @@ function generate_cypher(){
 		set_cypher_textarea(cypher_text);
 		return;
 	}
-	
+
 	// ** Starting Point ** //
 	TGRAPH = GRAPH;
 	console.dir(TGRAPH);
@@ -114,7 +114,7 @@ function generate_cypher(){
 	if(fragments.length > 0){
 		var cq = combine_fragments(fragments);
 		console.log(cq);
-		set_cypher_textarea(cq);	
+		set_cypher_textarea(cq);
 	}
 	else {
 		// Add hint ("Add Links to the Graph")
@@ -162,7 +162,7 @@ function generate_fragment(mode,candidate){
 			}
 			prune_links(links_remove);
 		}
-		
+
 		else if(candidate.param.chain == OUTGOING){
 			var elinks = candidate.param.related_links;
 			if(elinks.length % 2 == 0){
@@ -186,13 +186,13 @@ function generate_fragment(mode,candidate){
 						links_remove.push(elinks[i+1].id);
 						fragments.push(frg);
 					}
-					
+
 				}
 				fragments.push(frg_p);
 			}
 			prune_links(links_remove);
 		}
-	
+
 	}
 }
 function generate_single(link){
@@ -204,12 +204,12 @@ function generate_single(link){
 				return "(n"+link.source.id+")-[:NOLABEL]->(n"+link.target.id+")";
 			}
 			else {
-				return "(n"+link.source.id+")-[:NOLABEL]-(n"+link.target.id+")";	
+				return "(n"+link.source.id+")-[:NOLABEL]-(n"+link.target.id+")";
 			}
 	}
 }
 function generate_double(links, chain){
-	
+
 	if(chain == INCOMING){
 		var link_str_left;
 		var link_str_right;
@@ -290,7 +290,7 @@ function get_related_links(param){
 			}
 		}
 	}
-	else if(param.chain == OUTGOING){ 
+	else if(param.chain == OUTGOING){
 		for (var i = 0; i < TGRAPH.links.length; i++) {
 			if(!TGRAPH.links[i].flagged){
 				var test = TGRAPH.links[i].source.id == param.node.node;
@@ -303,7 +303,7 @@ function get_related_links(param){
 	return links;
 }
 function worker_function(graph){
-	var chains = generate_chains(graph);	
+	var chains = generate_chains(graph);
 	if(chains.incoming.length > 0 && chains.outgoing.length > 0){
 		var candidate = calculate_candidate(chains);
 		if(candidate.mode == SINGLE){
@@ -352,7 +352,7 @@ function calculate_candidate(chains){
 		else {
 			var chosen_one = pick_random([{ chain: INCOMING, node: large_in }, { chain: OUTGOING, node : large_out}]);
 			console.dir(chosen_one);
-			return { mode: NORMAL, param: chosen_one }; 	
+			return { mode: NORMAL, param: chosen_one };
 		}
 	}
 	else if(large_in.count > large_out.count){
@@ -384,10 +384,10 @@ function setup_events(){
 		update_graph_value();
 	});
 	$("#generate-btn").click(function(e){
-		update_graph_value();		
+		update_graph_value();
 	});
 	$(".swap-btn").click(function(e){
-		perform_swap();		
+		perform_swap();
 	});
 	$("#chk_conn").change(function(){
 		conn_gen = $("#chk_conn").is(':checked');
@@ -422,7 +422,7 @@ function setup_events(){
 	});
 }
 function init_graph(){
-	
+
 	$("#version").html(version);
 	var so = $("#order").val();
 	var ss = $("#size").val();
@@ -465,7 +465,7 @@ function update_graph_value(){
 		bidirectional_gen = $("#chk_bidirectional").is(':checked');
 		conn_gen = $("#chk_conn").is(':checked');
 		pseudo_gen = $("#chk_pseudo").is(':checked');
-		optimize_query = $("#chk_optimize").is(':checked');	
+		optimize_query = $("#chk_optimize").is(':checked');
 		non_directed_mix = $("#chk_non_directed_mix").is(':checked');
 		non_directed_mix_full = $("#chk_non_directed_mix_full").is(':checked');
 
@@ -494,7 +494,7 @@ function generate_random_graph(o,s,conn,bdg,psu,non_d_mix,non_d_mix_full){
 	    connected: conn,
 	    multiGraph: bdg,
 	    pseudoGraph: psu
-	  });	
+	  });
 	$.each(rand_graph.links, function(index, edge){
 		if(non_d_mix){
 			console.log("Gotten DMix");
@@ -514,9 +514,9 @@ function generate_random_graph(o,s,conn,bdg,psu,non_d_mix,non_d_mix_full){
 		}
 		else {
 			edge.directed = true;
-			edge.flagged = false;	
+			edge.flagged = false;
 		}
-		
+
 	});
 
 	$.each(rand_graph.nodes, function(index, node){
@@ -525,7 +525,7 @@ function generate_random_graph(o,s,conn,bdg,psu,non_d_mix,non_d_mix_full){
 		node.label = "N"+node.id;
 	});
 	console.dir(rand_graph);
-	return rand_graph;	
+	return rand_graph;
 }
 function perform_swap(){
 	var so = $("#order").val();
@@ -575,6 +575,7 @@ function apply_visuals () {
 	apply_code_mirror();
 	apply_draggable_widgets();
 }
+
 $(function(){
 	init_graph();
 	setup_events();
