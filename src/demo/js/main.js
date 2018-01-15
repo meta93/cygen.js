@@ -306,7 +306,7 @@ function worker_function(graph){
 	var chains = generate_chains(graph);
 	if(chains.incoming.length > 0 && chains.outgoing.length > 0){
 		var candidate = calculate_candidate(chains);
-		if(candidate.mode == SINGLE){
+		if(candidate.mode ==œ SINGLE){
 			generate_fragment(SINGLE, null);
 			if(conn_gen == false){
 				var inodes = findIsolatedNodes(TGRAPH);
