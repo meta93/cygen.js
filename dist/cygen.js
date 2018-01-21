@@ -1,5 +1,5 @@
 /*! Cygen.js - v1.1.0 - 2018-01-21
-* https://github.com/iongrahpix/Cygen.js
+* https://github.com/iongraphix/Cygen.js
 * Copyright (c) 2018 Damoah Dominic; Licensed  */
 (function (root, factory) {
     'use strict';
