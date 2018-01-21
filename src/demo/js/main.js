@@ -111,13 +111,11 @@ function generate_cypher(){
 	console.dir(TGRAPH);
 	fragments = []; // Empty the fragments array
 	worker_function(TGRAPH); // Recursion
+	console.dir(fragments);
 	if(fragments.length > 0){
 		var cq = combine_fragments(fragments);
 		console.log(cq);
 		set_cypher_textarea(cq);
-	}
-	else {
-		// Add hint ("Add Links to the Graph")
 	}
 }
 function generate_fragment(mode,candidate){
@@ -306,7 +304,7 @@ function worker_function(graph){
 	var chains = generate_chains(graph);
 	if(chains.incoming.length > 0 && chains.outgoing.length > 0){
 		var candidate = calculate_candidate(chains);
-		if(candidate.mode ==œ SINGLE){
+		if(candidate.mode == SINGLE){
 			generate_fragment(SINGLE, null);
 			if(conn_gen == false){
 				var inodes = findIsolatedNodes(TGRAPH);
