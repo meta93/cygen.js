@@ -2,13 +2,13 @@
   "name": "Cygen.js",
   "description": "This library converts a graph data structure into a Cypher query",
   "version": "1.1.0",
-  "homepage": "https://github.com/iongrahpix/Cygen.js",
+  "homepage": "https://github.com/iongraphix/Cygen.js",
   "author": {
     "name": "Damoah Dominic"
   },
   "repository": {
     "type": "https",
-    "url": "https://github.com/iongrahpix/Cygen.js"
+    "url": "https://github.com/iongraphix/Cygen.js"
   },
   "dependencies": {},
   "license": "GPL-3.0",
