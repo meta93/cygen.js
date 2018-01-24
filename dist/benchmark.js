@@ -77,7 +77,7 @@ suite.add('ng1m', function() {
 
 suite.on('cycle', function(event) {
     console.log("\n"+event.target.name+": \n");
-    console.dir(event.target.stats.sample);
+    console.dir(event.target);
 });
 
 suite.on('complete', function() {

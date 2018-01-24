@@ -551,7 +551,7 @@ function set_cypher_textarea(text){
 function apply_code_mirror(){
 	myCodeMirror = CodeMirror.fromTextArea($("#cypher-text-query")[0], {
 		lineWrapping : true,
-		readOnly: "nocursor"
+		// readOnly: "nocursor"
 	});
 }
 function apply_draggable_widgets(){
