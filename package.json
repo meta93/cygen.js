@@ -10,7 +10,10 @@
     "type": "https",
     "url": "https://github.com/iongraphix/Cygen.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "benchmark": "^2.1.4",
+    "microtime": "^2.1.7"
+  },
   "license": "GPL-3.0",
   "devDependencies": {
     "grunt": "~0.4.1",
