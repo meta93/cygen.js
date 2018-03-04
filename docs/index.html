@@ -1,1 +1,82 @@
-<h1>Hey Guys</h1>
+<html>
+	<head>
+		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/md-icons/css/material-design-iconic-font.min.css">
+		<link rel="stylesheet" href="js/codemirror/codemirror.css">
+		
+		<script src="js/vendor/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="js/vendor/bower_components/d3/d3.min.js"></script>
+		<script src="js/vendor/bower_components/webcola/WebCola/cola.min.js"></script>
+		<script src="js/vendor/bower_components/greuler/dist/greuler.js"></script>
+		<script src="js/codemirror/codemirror.js"></script>
+		<script src="js/codemirror/modes/cypher/cypher.js"></script>
+		<script src="js/util.js"></script>
+		<script src="js/main.js"></script>
+		<title>Cygen.js Application</title>
+	</head>
+	<body>
+
+		<center>
+			<div class="header">
+				<h1>Cygen.js <span id="version"></span></h1>
+				<button id="generate-btn">Re-Generate (With Settings)</button>
+				<button id="reset-btn">Reset Graph</button>
+			</div>
+			<div id="cypher-query" class="widget">
+			    <div class="toolbar">
+			    	<i class="zmdi zmdi-arrows" id="cypher-drag"></i>
+					<p><b>Generated Cypher Query</b></p>
+			    </div>
+				<textarea name="cypher" id="cypher-text-query" cols="30" rows="10" class="code"></textarea>
+				
+				<div class="options">
+					<table>
+						<tr>
+							
+						</tr>
+					</table>		
+				</div>
+			</div>
+
+			<div id="graph-options">
+				<p><b>Query Graph Simulation Settings</b></p>
+				<div class="code">
+					<table>
+						<tr>
+							<td style="padding-right:10px">Order <small>(Nodes)</small></td>
+							<td><input type="number" value="10" id="order"></td>
+							<td rowspan="2"><button class="swap-btn"><i class="zmdi zmdi-swap-vertical"></i></button></td>
+						</tr>
+						<tr>
+							<td style="padding-right:10px">Size <small>(Edges)</small></td>
+							<td><input type="number" value="5" id="size"></td>
+						</tr>
+						<tr>
+							<td style="padding-right:10px">Connected <small>(Graph)</small></td>
+							<td><input type="checkbox" id="chk_conn" value="true" checked="checked" /></td>
+						</tr>
+						<tr>
+							<td style="padding-right:10px">Multigraph <small>(Edges)</small></td>
+							<td><input type="checkbox" id="chk_bidirectional" /></td>
+						</tr>
+						<tr>
+							<td style="padding-right:10px">Pseudograph <small>(Loops)</small></td>
+							<td><input type="checkbox" id="chk_pseudo" /></td>
+						</tr>
+						<tr>
+							<td style="padding-right:10px">Non-directed <small>(Mix)</small></td>
+							<td><input type="checkbox" id="chk_non_directed_mix" /></td>
+						</tr>
+						<tr>
+							<td style="padding-right:10px">Complete Non-directed <small>(Full)</small></td>
+							<td><input type="checkbox" id="chk_non_directed_mix_full" /></td>
+						</tr>
+					</table>
+				</div>	
+			</div>
+			<div id="viewport">
+			</div>
+		</center>
+	</body>
+</html>
