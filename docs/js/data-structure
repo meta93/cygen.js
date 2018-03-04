@@ -1,0 +1,11 @@
+Optimiztion Data structure
+{
+	id,
+	data,
+	connections: {
+		left-dir: [NONE|>|<]
+		left: {node}
+		right-dir: [NONE|>|<]
+		right: {node}
+	}
+}
