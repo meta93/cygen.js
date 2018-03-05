@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "benchmark": "^2.1.4",
-    "microtime": "^2.1.7"
+    "microtime": "^2.1.7",
+    "super-download": "^1.0.1"
   },
   "license": "GPL-3.0",
   "devDependencies": {
