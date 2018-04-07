@@ -6,6 +6,9 @@
   "author": {
     "name": "Damoah Dominic"
   },
+  "scripts": {
+    "build": "grunt"
+  },
   "repository": {
     "type": "https",
     "url": "https://github.com/iongraphix/Cygen.js"

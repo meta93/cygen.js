@@ -1,4 +1,4 @@
-/*! Cygen.js - v1.1.0 - 2018-01-23
+/*! Cygen.js - v1.1.0 - 2018-04-07
 * https://github.com/iongraphix/Cygen.js
 * Copyright (c) 2018 Damoah Dominic; Licensed  */
 (function (root, factory) {
